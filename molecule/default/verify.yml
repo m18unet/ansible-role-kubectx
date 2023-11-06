@@ -1,0 +1,19 @@
+---
+- name: Verify
+  hosts: all
+  become: false
+  gather_facts: false
+
+  vars_files:
+    - ../../defaults/main.yml
+
+  tasks:
+    - name: Check the kubectx version.
+      command: "{{ kubectx_bin_path }} --version"
+      changed_when: false
+      register: kubectx_verify_version
+
+    - name: Verify kubectx's version is {{ kubectx_version }}
+      assert:
+        that:
+          - kubectx_version in kubectx_verify_version.stdout

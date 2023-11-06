@@ -1,0 +1,10 @@
+---
+# See available releases: https://github.com/ahmetb/kubectx/releases
+kubectx_version: '0.9.5'
+kubectx_platform: linux
+kubectx_arch: x86_64
+kubectx_bin_path: /usr/local/bin/kubectx
+kubectx_release_url: https://github.com/ahmetb/kubectx/releases/download/v{{ kubectx_version }}
+kubectx_archive_name: kubectx_v{{ kubectx_version }}_{{ kubectx_platform }}_{{ kubectx_arch }}.tar.gz
+kubectx_download_url: "{{ kubectx_release_url }}/{{ kubectx_archive_name }}"
+kubectx_checksum_url: "{{ kubectx_release_url }}/checksums.txt"
